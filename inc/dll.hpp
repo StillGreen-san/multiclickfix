@@ -1,1 +1,4 @@
-void hello_world();
+#pragma once
+
+void SetHook();
+void RemoveHook();
