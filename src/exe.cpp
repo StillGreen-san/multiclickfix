@@ -3,6 +3,7 @@
 
 int main()
 {
+	SetMinClickDelta(24);
 	SetHook();
 
 	MessageQueue();

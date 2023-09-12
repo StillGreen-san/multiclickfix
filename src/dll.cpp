@@ -5,13 +5,13 @@
 #include <Windows.h>
 
 constexpr LRESULT STOP_HOOK_CHAIN_RESULT = 1;
-constexpr DWORD MIN_TIME_DELTA = 24;
+DWORD minTimeDelta = 50;
 
 struct Button
 {
 	bool handleDown(DWORD clickTime)
 	{
-		if(clickTime - lastClickTime < MIN_TIME_DELTA)
+		if(clickTime - lastClickTime < minTimeDelta)
 		{
 			downSkipped = true;
 			return true;
@@ -25,7 +25,7 @@ struct Button
 			downSkipped = false;
 			return true;
 		}
-		if(clickTime - lastClickTime < MIN_TIME_DELTA)
+		if(clickTime - lastClickTime < minTimeDelta)
 		{
 			return true;
 		}
@@ -108,4 +108,9 @@ void /*__stdcall*/ RemoveHook()
 		UnhookWindowsHookEx(hkKey);
 	}
 	hkKey = nullptr;
+}
+
+void /*__stdcall*/ SetMinClickDelta(unsigned delta)
+{
+	minTimeDelta = delta;
 }
