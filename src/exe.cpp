@@ -20,12 +20,17 @@ int main(int argc, const char* argv[])
 		minClickDelta = userMinDelta;
 	}
 
+	if(!CreateTrayInstance())
+	{
+		return 1;
+	}
 	SetMinClickDelta(minClickDelta);
 	SetHook();
 
 	MessageQueue();
 
 	RemoveHook();
+	CleanupTrayInstance();
 
 	return 0;
 }
