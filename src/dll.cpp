@@ -5,7 +5,7 @@
 #include <Windows.h>
 
 constexpr LRESULT STOP_HOOK_CHAIN_RESULT = 1;
-DWORD minTimeDelta = 50;
+DWORD minTimeDelta = MIN_CLICK_DELTA_DEFAULT;
 
 struct Button
 {
