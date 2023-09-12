@@ -39,6 +39,7 @@ struct Button
 HHOOK hkKey = nullptr;
 HINSTANCE hInstHookDll = nullptr;
 Button leftClick;
+Button rightClick;
 
 BOOL /*APIENTRY*/ DllMain(HANDLE hModule, DWORD reasonForCall, LPVOID lpReserved)
 {
@@ -76,10 +77,18 @@ LRESULT /*CALLBACK*/ LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam)
 			return STOP_HOOK_CHAIN_RESULT;
 		}
 		break;
-		//	case WM_RBUTTONDOWN:
-		//	case WM_RBUTTONUP:
-		//	case WM_MOUSEMOVE:
-		//	case WM_MOUSEWHEEL:
+	case WM_RBUTTONDOWN:
+		if(rightClick.handleDown(msllhookstruct.time))
+		{
+			return STOP_HOOK_CHAIN_RESULT;
+		}
+		break;
+	case WM_RBUTTONUP:
+		if(rightClick.handleUp(msllhookstruct.time))
+		{
+			return STOP_HOOK_CHAIN_RESULT;
+		}
+		break;
 	}
 	return CallNextHookEx(hkKey, nCode, wParam, lParam);
 }
