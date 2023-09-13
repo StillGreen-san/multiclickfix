@@ -1,7 +1,5 @@
 #include "dll.hpp"
 
-#define WIN32_LEAN_AND_MEAN
-#define UNICODE
 #include <Windows.h>
 
 constexpr LRESULT STOP_HOOK_CHAIN_RESULT = 1;

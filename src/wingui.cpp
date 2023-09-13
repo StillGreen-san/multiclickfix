@@ -1,9 +1,6 @@
 #include "wingui.hpp"
 
-#define WIN32_LEAN_AND_MEAN
-#define UNICODE
 #include <Windows.h>
-#include <shellapi.h>
 
 #include <cwchar>
 
