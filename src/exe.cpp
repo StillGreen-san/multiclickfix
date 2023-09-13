@@ -4,15 +4,15 @@
 #include <cstdio>
 #include <cstdlib>
 
-int main(int argc, const char* argv[])
+int WinMain()
 {
 	unsigned minClickDelta = MIN_CLICK_DELTA_DEFAULT;
 
-	if(argc > 1)
+	if(__argc > 1)
 	{
 		char* strEnd = nullptr;
-		const unsigned userMinDelta = std::strtoul(argv[1], &strEnd, 10);
-		if(strEnd == argv[1])
+		const unsigned userMinDelta = std::strtoul(__argv[1], &strEnd, 10);
+		if(strEnd == __argv[1])
 		{
 			std::puts("usage: mcfexe.exe <MinClickDelta>\n");
 			return 1;
