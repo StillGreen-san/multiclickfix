@@ -59,7 +59,7 @@ void TrayInstanceAddTrayIcon(HWND hWnd)
 	Shell_NotifyIconW(NIM_ADD, &nid);
 }
 
-LRESULT TrayInstanceWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+LRESULT __stdcall TrayInstanceWndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch(uMsg)
 	{

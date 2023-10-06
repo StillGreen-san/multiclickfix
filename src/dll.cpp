@@ -50,7 +50,7 @@ BOOL /*APIENTRY*/ DllMain(HANDLE hModule, DWORD reasonForCall, LPVOID lpReserved
 	return TRUE;
 }
 
-LRESULT /*CALLBACK*/ LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam)
+LRESULT CALLBACK LowLevelMouseProc(int nCode, WPARAM wParam, LPARAM lParam)
 {
 	if(nCode < 0)
 	{

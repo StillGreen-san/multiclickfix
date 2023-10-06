@@ -4,7 +4,9 @@
 #include <cstdio>
 #include <cstdlib>
 
-int WinMain()
+#include <Windows.h>
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine, int nCmdShow)
 {
 	unsigned minClickDelta = MIN_CLICK_DELTA_DEFAULT;
 
